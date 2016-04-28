@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- 权限的一些灵活配置-->
+    <!-- 加密服务 -->
+    <bean id="encryptService" class="org.openkoala.security.infra.credential.MD5EncryptService">
+        <!-- 是否启用盐值加密 -->
+        <property name="saltDisabled" value="${security.saltDisabled}"></property>
+        <!--加密次数-->
+        <property name="hashIterations" value="${security.hashIterations}"></property>
+    </bean>
+</beans>
